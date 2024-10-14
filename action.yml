@@ -50,7 +50,7 @@ runs:
               echo fetch
               git branch -m "gh-pages"
               echo branch
-              git branch --set-upstream-to=origin "gh-pages"
+              git branch --set-upstream-to=origin 
               echo branch 2
               git remote -v
               echo test
