@@ -63,7 +63,7 @@ runs:
               git pull --rebase
               echo pull
               cd ..
-              rmdir dist 
+              
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn install --frozen-lockfile; else npm ci; fi
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn build; else npm run build; fi
               cd dist
