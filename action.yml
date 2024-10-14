@@ -45,7 +45,7 @@ runs:
               
               git init
               
-              git remote add origin https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
+              git remote add origin https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git -m gh-pages
               git fetch
               git pull
               cd ..
