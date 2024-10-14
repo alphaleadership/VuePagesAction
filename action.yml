@@ -60,7 +60,7 @@ runs:
               echo test
               git fetch
               echo fetch
-              git pull
+              git pull --rebase
               echo pull
               cd ..
               rmdir dist 
