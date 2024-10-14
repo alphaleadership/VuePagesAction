@@ -47,6 +47,7 @@ runs:
               
               git remote add origin https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git -m gh-pages
               git fetch
+              git branch --set-upstream-to=origin/gh-pages master
               git pull
               cd ..
               rmdir dist 
