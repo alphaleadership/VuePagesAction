@@ -50,6 +50,9 @@ runs:
               echo fetch
               git branch -m "gh-pages"
               echo branch
+              echo temp >log.txt
+              git commit -m temp
+              
               git branch --set-upstream-to=origin 
               echo branch 2
               git remote -v
