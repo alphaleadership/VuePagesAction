@@ -72,5 +72,5 @@ runs:
               
               git add -A
               git commit -m '${{ inputs.gitmsg }}'
-              git push -f https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
+              git push 
         shell: bash
