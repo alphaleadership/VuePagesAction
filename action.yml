@@ -38,14 +38,17 @@ runs:
   steps:
       - name: Build Vue
         run: |
+              git config --global user.email "${{ inputs.gitemail }}"
+              git config --global user.name "${{ inputs.gitname }}"
+              git init
+              
+              git pull https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn install --frozen-lockfile; else npm ci; fi
               if [ true ==  ${{ inputs.useyarn }} ]; then yarn build; else npm run build; fi
               cd dist
               ln -s index.html 404.html
               if [ "none" !=  ${{ inputs.cname }} ]; then echo '${{ inputs.cname }}' > CNAME; fi
-              git config --global user.email "${{ inputs.gitemail }}"
-              git config --global user.name "${{ inputs.gitname }}"
-              git init
+              
               git add -A
               git commit -m '${{ inputs.gitmsg }}'
               git push -f https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
