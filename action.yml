@@ -40,8 +40,9 @@ runs:
         run: |
               git config --global user.email "${{ inputs.gitemail }}"
               git config --global user.name "${{ inputs.gitname }}"
+              mkdir dist 
               cd dist
-              rm *
+              
               git init
               
               git remote add origin https://${{ inputs.username }}:${{ inputs.token }}@github.com/${{ inputs.username }}/${{ inputs.reponame }}.git master:gh-pages
