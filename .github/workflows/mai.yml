@@ -18,5 +18,6 @@ jobs:
         tag: "latest"
         generateReleaseNotes: true
         skipIfReleaseExists: false
+        makeLatest: true
         artifacts: "release.tar.gz,foo/*.txt"
         bodyFile: "README.md"
