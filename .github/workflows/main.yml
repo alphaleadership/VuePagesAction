@@ -13,3 +13,8 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         title: MyReleaseMessage
+    - uses: actions/checkout@v3
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "readme.md"
+        bodyFile: "readme.md"
