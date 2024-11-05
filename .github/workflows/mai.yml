@@ -13,7 +13,7 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v3
-    - uses: ncipollo/release-action@v1
+    - uses: alphaleadership/release-action@1.0.0
       with:
         tag: "la"
         generateReleaseNotes: true
