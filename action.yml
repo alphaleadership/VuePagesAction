@@ -77,5 +77,6 @@ runs:
               
               git add -A
               git commit -m '${{ inputs.gitmsg }}'
-              git push 
+              if ! git diff --quiet remotes/origin/HEAD; then   git push ; fi
+            
         shell: bash
